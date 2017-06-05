@@ -8,6 +8,7 @@ Git常用命令
 6. 回到learngit目录： cd ..  (当前路径要在subdir下)
 7. 查看仓库当前状态： git status
 8. 对比文件不同 ： git diff Git常用命令.txt
+9. 查询提交日志：git log
  
 添加文件到Git仓库，分两步，这里以新建一个文件"Git常用命令.txt"，将这个文件添加到learngit为例：
 首先，要将这个文件放到learngit目录下面，然后分两步：
