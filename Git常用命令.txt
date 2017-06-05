@@ -9,8 +9,18 @@ Git常用命令
 7. 查看仓库当前状态： git status
 8. 对比文件不同 ： git diff Git常用命令.txt
 9. 查询提交日志：git log
+10.回退某个版本：git reset --hard HEAD^(回退上个版本)
+				 git reset --hard HEAD^^(回退上上个版本)
+				 git reset --hard HEAD~100(回退100个版本)
+				 git reset --hard 522664(回退到某个指定的版本，522664为版本号的前几位，可以不必写全)
+				 查看版本号可以用 git reflog,git log也可以，但是只能查到回退后的版本，git reflog可以查到所有的版本
+				 回退后想看下文件是不是回退正确了，可以用cat Git常用命令.txt打开文件查看
+11.撤销修改：文件还在工作区（修改后未add）: git checkout -- Git常用命令.txt
+			 文件在暂存区但还未commit：git reset HEAD Git常用命令.txt
+			 文件以及commit到版本库：参加第10条版本回退
  
 添加文件到Git仓库，分两步，这里以新建一个文件"Git常用命令.txt"，将这个文件添加到learngit为例：
 首先，要将这个文件放到learngit目录下面，然后分两步：
 第一步，使用命令git add <file>，也就是git add Git常用命令.txt (注意，可反复多次使用，添加多个文件；)
 第二步，使用命令git commit，完成。git commit -m "Git常用命令.txt" (-m后面是注释)
+
