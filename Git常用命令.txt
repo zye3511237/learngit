@@ -1,0 +1,9 @@
+Git常用命令
+1. 创建目录：mkdir learngit
+2. 进入某一目录：cd learngit (进入 learngit 目录)
+3. 显示当前路径：pwd
+4. 把learngit目录变成Git可以管理的仓库: git init (当前路径在learngit下)
+4. 在learngit下面再建一个目录: mkdir subdir (当前路径要在learngit下)
+5. 进入subdir目录 ： cd subdir
+6. 回到learngit目录： cd ..  (当前路径要在subdir下)
+ 
