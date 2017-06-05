@@ -6,4 +6,10 @@ Git常用命令
 4. 在learngit下面再建一个目录: mkdir subdir (当前路径要在learngit下)
 5. 进入subdir目录 ： cd subdir
 6. 回到learngit目录： cd ..  (当前路径要在subdir下)
+7. 查看仓库当前状态： git status
+8. 对比文件不同 ： git diff Git常用命令.txt
  
+添加文件到Git仓库，分两步，这里以新建一个文件"Git常用命令.txt"，将这个文件添加到learngit为例：
+首先，要将这个文件放到learngit目录下面，然后分两步：
+第一步，使用命令git add <file>，也就是git add Git常用命令.txt (注意，可反复多次使用，添加多个文件；)
+第二步，使用命令git commit，完成。git commit -m "Git常用命令.txt" (-m后面是注释)
