@@ -36,4 +36,9 @@ Git常用命令
 git clone https://github.com/zye3511237/hello-world.git
 
 拉分支：
-git checkout -b dev
+git checkout -b dev  创建分支dev并切换到这个分支下面，相当于下面这两条：
+git branch dev
+git checkout dev 
+查看当前分支：git branch
+修改Git常用命令.txt文件，再用cat查看，不管是在dev下还是master下都看到已修改，切换到dev下add并commit，此时再看dev下是已经修改的，master下是未修改的，切换到master下，使用git merge dev,可以将dev的修改merge到master下，此时再看master就是已经修改的了，合并完成后可以删除dev分支：git branch -d dev
+
