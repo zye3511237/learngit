@@ -17,10 +17,15 @@ Git常用命令
 				 回退后想看下文件是不是回退正确了，可以用cat Git常用命令.txt打开文件查看
 11.撤销修改：文件还在工作区（修改后未add）: git checkout -- Git常用命令.txt
 			 文件在暂存区但还未commit：git reset HEAD Git常用命令.txt
-			 文件以及commit到版本库：参加第10条版本回退
+			 文件已经commit到版本库：参考第10条版本回退
+12.删除文件：删除版本库的文件:先git rm Git常用命令.txt,再git commit
  
 添加文件到Git仓库，分两步，这里以新建一个文件"Git常用命令.txt"，将这个文件添加到learngit为例：
 首先，要将这个文件放到learngit目录下面，然后分两步：
 第一步，使用命令git add <file>，也就是git add Git常用命令.txt (注意，可反复多次使用，添加多个文件；)
 第二步，使用命令git commit，完成。git commit -m "Git常用命令.txt" (-m后面是注释)
 
+将本地仓库与远程仓库关联：
+1.首先确保本地仓库可以将内容推送到远程仓库也就是github，也就是将电脑的ssh key添加到自己的github账号中
+2.假设本地创建了一个仓库learngit,github上也创建了一个仓库learngit，先将本地的learngit和github上的learngit关联：git remote add origin https://github.com/zye3511237/learngit.git
+3.将本地learngit中的内容推送到github上的learngit：git push -u origin master，然后就可以在github上面看到本地的内容了
