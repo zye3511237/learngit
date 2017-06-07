@@ -34,3 +34,6 @@ Git常用命令
 注意：Git 提示fatal: remote origin already exists 错误解决办法：先删除：git remote rm origin，再添加：git remote add origin https://github.com/zye3511237/learngit.git
 将远程仓库克隆到本地仓库：
 git clone https://github.com/zye3511237/hello-world.git
+
+拉分支：
+git checkout -b dev
