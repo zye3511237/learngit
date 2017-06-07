@@ -26,6 +26,11 @@ Git常用命令
 第二步，使用命令git commit，完成。git commit -m "Git常用命令.txt" (-m后面是注释)
 
 将本地仓库与远程仓库关联：
-1.首先确保本地仓库可以将内容推送到远程仓库也就是github，也就是将电脑的ssh key添加到自己的github账号中
-2.假设本地创建了一个仓库learngit,github上也创建了一个仓库learngit，先将本地的learngit和github上的learngit关联：git remote add origin https://github.com/zye3511237/learngit.git
-3.将本地learngit中的内容推送到github上的learngit：git push -u origin master，然后就可以在github上面看到本地的内容了
+首先确保本地仓库可以将内容推送到远程仓库也就是github，也就是将电脑的ssh key添加到自己的github账号中
+将本地仓库推送到远程仓库：
+1.假设本地创建了一个仓库learngit,github上也创建了一个仓库learngit，先将本地的learngit和github上的learngit关联：git remote add origin https://github.com/zye3511237/learngit.git
+2.将本地learngit中的内容推送到github上的learngit：git push -u origin master，然后就可以在github上面看到本地的内容了
+3.第一次推送用git push -u origin master,后面修改后再推送直接git push origin master就行了，前提是本地已经commit了
+注意：Git 提示fatal: remote origin already exists 错误解决办法：先删除：git remote rm origin，再添加：git remote add origin https://github.com/zye3511237/learngit.git
+将远程仓库克隆到本地仓库：
+git clone https://github.com/zye3511237/hello-world.git
