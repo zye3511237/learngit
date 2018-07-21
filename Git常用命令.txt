@@ -1,0 +1,44 @@
+Git常用命令
+1. 创建目录：mkdir learngit
+2. 进入某一目录：cd learngit (进入 learngit 目录)
+3. 显示当前路径：pwd
+4. 把learngit目录变成Git可以管理的仓库: git init (当前路径在learngit下)
+4. 在learngit下面再建一个目录: mkdir subdir (当前路径要在learngit下)
+5. 进入subdir目录 ： cd subdir
+6. 回到learngit目录： cd ..  (当前路径要在subdir下)
+7. 查看仓库当前状态： git status
+8. 对比文件不同 ： git diff Git常用命令.txt
+9. 查询提交日志：git log
+10.回退某个版本：git reset --hard HEAD^(回退上个版本)
+				 git reset --hard HEAD^^(回退上上个版本)
+				 git reset --hard HEAD~100(回退100个版本)
+				 git reset --hard 522664(回退到某个指定的版本，522664为版本号的前几位，可以不必写全)
+				 查看版本号可以用 git reflog,git log也可以，但是只能查到回退后的版本，git reflog可以查到所有的版本
+				 回退后想看下文件是不是回退正确了，可以用cat Git常用命令.txt打开文件查看
+11.撤销修改：文件还在工作区（修改后未add）: git checkout -- Git常用命令.txt
+			 文件在暂存区但还未commit：git reset HEAD Git常用命令.txt
+			 文件已经commit到版本库：参考第10条版本回退
+12.删除文件：删除版本库的文件:先git rm Git常用命令.txt,再git commit
+ 
+添加文件到Git仓库，分两步，这里以新建一个文件"Git常用命令.txt"，将这个文件添加到learngit为例：
+首先，要将这个文件放到learngit目录下面，然后分两步：
+第一步，使用命令git add <file>，也就是git add Git常用命令.txt (注意，可反复多次使用，添加多个文件；)
+第二步，使用命令git commit，完成。git commit -m "Git常用命令.txt" (-m后面是注释)
+
+将本地仓库与远程仓库关联：
+首先确保本地仓库可以将内容推送到远程仓库也就是github，也就是将电脑的ssh key添加到自己的github账号中
+将本地仓库推送到远程仓库：
+1.假设本地创建了一个仓库learngit,github上也创建了一个仓库learngit，先将本地的learngit和github上的learngit关联：git remote add origin https://github.com/zye3511237/learngit.git
+2.将本地learngit中的内容推送到github上的learngit：git push -u origin master，然后就可以在github上面看到本地的内容了
+3.第一次推送用git push -u origin master,后面修改后再推送直接git push origin master就行了，前提是本地已经commit了
+注意：Git 提示fatal: remote origin already exists 错误解决办法：先删除：git remote rm origin，再添加：git remote add origin https://github.com/zye3511237/learngit.git
+将远程仓库克隆到本地仓库：
+git clone https://github.com/zye3511237/hello-world.git
+
+拉分支：
+git checkout -b dev  创建分支dev并切换到这个分支下面，相当于下面这两条：
+git branch dev
+git checkout dev 
+查看当前分支：git branch
+修改Git常用命令.txt文件，再用cat查看，不管是在dev下还是master下都看到已修改，切换到dev下add并commit，此时再看dev下是已经修改的，master下是未修改的，切换到master下，使用git merge dev,可以将dev的修改merge到master下，此时再看master就是已经修改的了，合并完成后可以删除dev分支：git branch -d dev
+
